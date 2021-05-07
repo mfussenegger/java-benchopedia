@@ -1,0 +1,13 @@
+*.class
+
+*.log
+
+*.jar
+*.zip
+*.tar.gz
+
+.settings/
+.project
+.classpath
+.factorypath
+target/
