@@ -13,6 +13,7 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
@@ -26,6 +27,13 @@ public class UUIDBenchmark {
     @Benchmark
     public UUID secureRandomUUID() {
         return UUID.randomUUID();
+    }
+
+    @Benchmark
+    public UUID staticLongs() {
+        long mostBits = -7160247584974570992L;
+        long leastBits = -8358954976314321773L;
+        return new UUID(mostBits, leastBits);
     }
 
     @Benchmark
