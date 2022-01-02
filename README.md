@@ -9,4 +9,9 @@ Creating benchmarks is difficult, if you spot a flaw in a benchmark please point
 ## Usage
 
 - Set the `JAVA_HOME` environment variable to Java 17
-- ./gradlew run
+- `./gradlew run`
+
+Or:
+
+- `./gradlew build`
+- `java -jar app/build/libs/app.jar`

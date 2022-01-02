@@ -25,3 +25,12 @@ test.enabled = false
 application {
     mainClass = 'org.openjdk.jmh.Main'
 }
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.openjdk.jmh.Main"
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
